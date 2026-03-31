@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-movies-table
+      author: Aytac Huseynzada
+      changes:
+        - createTable:
+            tableName: movies
+            schemaName: public
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+
+              - column:
+                  name: genre
+                  type: VARCHAR(100)
+
+              - column:
+                  name: total_seats
+                  type: INT
+
+              - column:
+                  name: available_seats
+                  type: INT
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
