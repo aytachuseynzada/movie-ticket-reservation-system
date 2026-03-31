@@ -22,6 +22,7 @@ public class ReservationService {
     private final UserRepository userRepository;
     private final MovieRepository movieRepository;
     public void createReservation(ReservationRequestDto reservationRequestDto) {
+        // This comment added for PR demonstration
         var user = fetchUserIfExist(reservationRequestDto.getUserId());
         if(!user.getActive()){
             throw new UserNotActiveException("USER IS NOT ACTIVE");
@@ -41,6 +42,7 @@ public class ReservationService {
     }
     @Transactional
     public void approveReservation(Long id){
+        // This comment added for PR demonstration
         var reservation = fetchReservationIfExist(id);
         var movie = fetchMovieIfExist(reservation.getMovieId());
 
